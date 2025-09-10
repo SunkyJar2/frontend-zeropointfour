@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+.title{
+  background: linear-gradient(to right, white, rgb(185, 192, 244));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* for Firefox */
+  color: transparent;
+}
+.liquid-container{
+    background: radial-gradient(farthest-corner at 65% 55%,transparent 30%, rgba(255, 255, 255, 0.141) 60%,transparent 80%),
+    linear-gradient(-45deg, transparent 70%, rgba(171, 146, 255, 0.441));
+    border-style: solid;
+    border-width: 8px;
+    border-color: rgba(255, 255, 255, 0.174);
+    border-radius: 2rem;
+
+}
