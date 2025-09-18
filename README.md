@@ -1,47 +1,43 @@
-# Svelte + TS + Vite
+Decentralized Password Manager with Shamir Secret Sharing
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+A research prototype of a decentralized password manager that implements Shamir Secret Sharing (SSS) to enhance password security. Unlike traditional centralized password managers, this system leverages a hybrid architecture combining self-hosted servers and public cloud databases to minimize single points of failure.
 
-## Recommended IDE Setup
+✨ Features
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+Decentralized design: Passwords stored on a private server, while master password shares are distributed across multiple cloud providers.
 
-## Need an official Svelte framework?
+Shamir Secret Sharing (SSS): Splits master password into multiple shares; only a subset of shares is required for reconstruction.
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+AES-256 Encryption: Ensures secure transmission and storage of sensitive data.
 
-## Technical considerations
+🚧 Limitations
 
-**Why use this over SvelteKit?**
+Prototype intended for research and educational purposes only.
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+Not recommended for production or commercial use.
 
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+Focuses on decentralization and SSS, not exhaustive security hardening (e.g., side-channel attacks, memory leaks).
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+🛠️ Tech Stack
 
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
+Backend: Node (Javascript)
 
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
+Frontend: Tauri
 
-**Why include `.vscode/extensions.json`?**
+Database: Hybrid (Self-hosted + Public Cloud)
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+Encryption: AES-256, Hashing
 
-**Why enable `allowJs` in the TS template?**
+Algorithm: Shamir Secret Sharing
 
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
+📖 Research Goals
 
-**Why is HMR not preserving my local component state?**
+Analyze user understanding of password security.
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
+Evaluate the security of a decentralized password manager.
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+Compare Shamir Secret Sharing to conventional centralized password manager storage.
 
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+📌 Disclaimer
+
+This project is a research prototype created for the OPSI 2025 competition and should not be used to secure real-world sensitive data at this early phase.
